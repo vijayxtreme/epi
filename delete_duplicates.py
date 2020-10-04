@@ -2,7 +2,7 @@ A = [1,3,3,7,11,4,4,1,2]
 
 def delete_duplicates(A):
     A.sort()
-    print(A)
+    print("Sorted",A)
     if not A:
         return 0
     write_index = 1
@@ -11,6 +11,7 @@ def delete_duplicates(A):
             A[write_index] = A[i]
             write_index += 1
     
+    print("Final", A)
     return write_index
 
 delete_duplicates(A)
