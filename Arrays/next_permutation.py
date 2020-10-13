@@ -1,3 +1,4 @@
+A = [6,2,1,5,4,3,0]
 def next_permutation(perm):
     # Find the first entry from the right that is smaller than the entry
     # immediately after it.
@@ -10,8 +11,8 @@ def next_permutation(perm):
         return [] # perm is the last permutation
 
     # Swap the smallest entry after index inversion_point that is greater than
-    # perm[inversion_point].  SInce entries in perm are decreasing after
-    # inversion point, if we search in reverse order, the first engry that is
+    # perm[inversion_point].  Since entries in perm are decreasing after
+    # inversion point, if we search in reverse order, the first entry that is
     # greater than perm[inversion_point] is the entry to swap with.
     for i in reversed(range(inversion_point + 1, len(perm))):
         if perm[i] > perm[inversion_point]:
@@ -20,6 +21,8 @@ def next_permutation(perm):
     
     # Entries in perm must appear in decreasing order after inversion_point,
     # so we simply reverse these entries to get the smallest dictionary order.
-    perm[inversion_point + 1 :] = reversed(perm[inversion_point + 1]:)
+    perm[inversion_point + 1 :] = reversed(perm[inversion_point + 1:])
     return perm
-    
+
+B = next_permutation(A)
+print(B)
