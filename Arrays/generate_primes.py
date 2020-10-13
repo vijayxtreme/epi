@@ -33,4 +33,4 @@ def generate_primes2(n):
                 is_prime[j] = False
     return primes
 
-print(generate_primes2(100))
+print(generate_primes2(5))
