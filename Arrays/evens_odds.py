@@ -1,17 +1,18 @@
-A = [1,2,3,4,5,6]
+A = [1,2,3,4,5,6,7]
 
 # Brute Force Example
 # O(N) Time | O(N) Space
 def evens_odds1(A):
     i = 0
     temp = []
-    while i != len(A):
-        if A[i] % 2 == 0: 
+    middle = len(A)//2
+
+    while i < middle:
+        if A[i] % 2 != 0: 
             temp.append(A[i])
             A.remove(A[i]) 
-            i -=1
         i += 1
-    return temp + A 
+    return A + temp
 
 # print(evens_odds1(A))
 
@@ -20,16 +21,13 @@ def evens_odds1(A):
 # Which can lead to reshuffling the odds again (unneeded work)
 def evens_odds2(A):
     i = 0
-    j = len(A)-1
-    middle = j // 2
+    middle = len(A) // 2
 
-    while i <= middle:
+    while i < middle:
         if A[i] % 2 != 0:
             A.append(A[i])
             A.remove(A[i])        
         i += 1
-
-    #assert A == [2,4,6,1,3,5] -- needs pytest
     return A
 
 # print(evens_odds2(A))
@@ -49,4 +47,4 @@ def evens_odds3(A):
             j -= 1
     return A
 
-print(evens_odds3(A))
+# print(evens_odds3(A))
