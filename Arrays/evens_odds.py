@@ -1,5 +1,6 @@
 A = [1,2,3,4,5,6]
 
+# Brute Force Example
 # O(N) Time | O(N) Space
 def evens_odds1(A):
     i = 0
@@ -28,7 +29,7 @@ def evens_odds2(A):
             A.remove(A[i])        
         i += 1
 
-    assert A == [2,4,6,1,3,5]
+    #assert A == [2,4,6,1,3,5] -- needs pytest
     return A
 
 # print(evens_odds2(A))
